@@ -1,9 +1,8 @@
 /*
+getbyattr.js: Micro CSS2 attributes selector engine
 
-getbyattr,js: Micro CSS2 attributes selector engine
-licenses:
-  - [MIT License](http://mootools.net/license.txt)
-
+License: http://www.opensource.org/licenses/mit-license.php
+Author: John Acosta - @jseros <wwww.jseros.com>
 */
 function getByAttr(selector, context){
 	var match = /^([\w-]+|\*)?(?:\[)([\w-]+)([\*\^\$!])?=(['"]?)(.*)\4(?:\])$/.exec( selector ) || [],
