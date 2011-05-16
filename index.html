@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Obteniendo elementos mediante selectores CSS de atributo</title>
+	<meta name="robots" content="noindex, follow" />
+	<meta name="author" content="jseros.com" />
+	
+	<script type="text/javascript" src="getByattr_1_2.js"></script>
+	<script type="text/javascript">
+	window.onload = function(){
+		var elems = getByAttr("a[href$=.com/]");
+
+		for(var i = 0; elems[i]; i++ )
+		{
+			document.getElementById('debug').innerHTML = elems[i].nodeName + "<br />";
+		}
+	};
+	</script>
+</head>
+<body>
+	<h1>Selectores de atributo con Javascript</h1>
+	<div>
+		<p rel="content">
+			<a href="http://www.jseros.com/" title="Ir a mi Blog">Los scripts de JSEROS.</a>
+		</p>
+		<span rel="thickbox">Un thickbox</span>
+	</div>
+	<div id="debug"></div>
+</body>
+</html>
