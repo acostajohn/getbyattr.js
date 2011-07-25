@@ -5,6 +5,10 @@ License: http://www.opensource.org/licenses/mit-license.php
 Author: John Acosta - @jseros <wwww.jseros.com>
 */
 function getByAttr(selector, context){
+	if( document.querySelectorAll ){
+		return (context || document).querySelectorAll(selector);
+	}
+	
 	var match = /^([\w-]+|\*)?(?:\[)([\w-]+)([\*\^\$!])?=(['"]?)(.*)\4(?:\])$/.exec( selector ) || [],
 	attrName = { 'class':'className' , 'for':'htmlFor' }[ match[2] ] || match[2], 
 	ctx = context || document,
